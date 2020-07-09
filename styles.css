@@ -1,0 +1,73 @@
+* {
+  font-family: Montserrat, sans-serif;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h2, h3 {
+  margin: 0 0 20px;
+}
+
+p {
+  margin-bottom: 5px;
+}
+
+.header {
+  background-color: #0a7e51;
+  color: white;
+}
+
+.title-container {
+  padding: 10px 30px 0;
+}
+
+.navigation {
+  background-color: cornflowerblue;
+  padding: 0 30px;
+}
+
+.navigation ul {
+  display: flex;
+  padding: 5px 0;
+}
+
+.navigation li {
+  margin-right: 40px;
+  list-style-type: none;
+}
+
+.navigation li a {
+  color: white;
+  text-decoration: none;
+}
+  
+.content {
+  display: flex;
+  justify-content: center;
+  max-width: 1200px;
+  margin: auto;
+  flex-grow: 1;
+}
+
+.main-content {
+  width: 66%;
+}
+
+.side-bar {
+  background-color: lightgrey;
+  padding: 20px;
+  width: 200px;
+}
+
+.articles {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.article {
+  padding: 15px;
+}
+
+.jobs {
+  margin-top: 40px
+}
