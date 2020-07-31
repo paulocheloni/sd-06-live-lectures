@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Submissão de Palestras - CornTalks 🌽</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- CABECALHO -->
+  <header class="speaker-form-header">
+    <h1>Submissão de Palestrante</h1>
+    <p><em>Quer palestrar na nossa CornTalks? Preencha o formulário!</em></p>
+  </header>
+
+  <!-- FORMULARIO -->
+  <form action="" method="GET" class="speaker-form">
+    <div class="form-row">
+
+      <!-- NOME -->
+      <div class="line-content">
+        <label for="full-name">Nome:</label>
+        <input name="full-name" type="text" id="full-name">
+      </div>
+
+      <!-- TIPO DE PALESTRA -->
+      <div class="line-content">
+        <fieldset class="talk-type-fieldset">
+          <legend>Tipo de palestra</legend>
+          <input type="radio" name="talk-type" id="talk-type-main-stage" value="main-stage">
+          <label for="talk-type-main-stage">Palco Principal</label>
+
+          <input type="radio" name="talk-type" id="talk-type-workshop" value="workshop">
+          <label for="talk-type-workshop">Workshop</label>
+        </fieldset>
+      </div>
+
+      <!-- INFORMACOES DO TAMANHO DA CAMISA -->
+      <div class="line-content">
+        <label for="t-shirt">Tamanho da Camisa</label>
+        <select name="t-shirt" id="t-shirt">
+          <option value="gg">GG</option>
+          <option value="g">G</option>
+          <option value="M">M</option>
+          <option value="P">P</option>
+          <option value="baby-look">Baby Look</option>
+        </select>
+      </div>
+
+      <!-- DESCRICAO DA PALESTRA -->
+      <div class="line-content">
+        <label for="abstract">Descrição da palestra</label>
+        <textarea name="abstract" id="abstract"></textarea>
+        <div>Descreva sua palestra em 500 palavras. Seja objetiva!</div>
+      </div>
+
+      <!-- DISPONIBILIDADE -->
+      <div class="line-content">
+        <label for=""></label>
+        <input type="checkbox" name="" id="">
+        <span>Eu estou disponível na data da apresentação da grandiosa CornTalk</span>
+      </div>
+
+      <!-- BOTAO ENVIAR -->
+      <div class="line-content">
+        <button type="submit">Enviar!</button>
+      </div>
+
+    </div>
+
+  </form>
+</body>
+</html>
