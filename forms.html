@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Submissão de Palestras - CornTalks 🌽</title>
+</head>
+<body>
+
+  <!-- CABECALHO -->
+  <header>
+    <h1>Submissão de Palestrante</h1>
+    <p><em>Quer palestrar na nossa CornTalks? Preencha o formulário!</em></p>
+  </header>
+
+  <!-- FORMULARIO -->
+  <form action="" method="GET">
+
+    <!-- NOME -->
+    <label for="full-name">Nome:</label>
+    <input name="full-name" type="text" id="full-name">
+
+    <!-- TIPO DE PALESTRA -->
+    <fieldset>
+      <legend>Tipo de palestra</legend>
+      <input type="radio" name="talk-type" id="talk-type-main-stage" value="main-stage">
+      <label for="talk-type-main-stage">Palco Principal</label>
+
+      <input type="radio" name="talk-type" id="talk-type-workshop" value="workshop">
+      <label for="talk-type-workshop">Workshop</label>
+    </fieldset>
+
+    <!-- INFORMACOES DO TAMANHO DA CAMISA -->
+    <label for="t-shirt">Tamanho da Camisa</label>
+    <select name="t-shirt" id="t-shirt">
+      <option value="gg">GG</option>
+      <option value="g">G</option>
+      <option value="M">M</option>
+      <option value="P">P</option>
+      <option value="baby-look">Baby Look</option>
+    </select>
+
+    <!-- DESCRICAO DA PALESTRA -->
+    <label for="abstract">Descrição da palestra</label>
+    <textarea name="abstract" id="abstract"></textarea>
+    <div>Descreva sua palestra em 500 palavras. Seja objetiva!</div>
+
+    <!-- DISPONIBILIDADE -->
+    <label for=""></label>
+    <input type="checkbox" name="" id="">
+    <span>Eu estou disponível na data da apresentação da grandiosa CornTalk</span>
+
+    <!-- BOTAO ENVIAR -->
+    <button type="submit">Enviar!</button>
+
+  </form>
+</body>
+</html>
