@@ -3,21 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <title>Submissão de Palestras - CornTalks 🌽</title>
+  <link rel="stylesheet" href="css/bulma.min.css">
 </head>
 <body>
 
   <!-- CABECALHO -->
-  <header>
-    <h1>Submissão de Palestrante</h1>
-    <p><em>Quer palestrar na nossa CornTalks? Preencha o formulário!</em></p>
+  <header class="section">
+    <h1 class="title has-text-centered">Submissão de Palestrante</h1>
+    <p class="subtitle has-text-centered">
+      <em>Quer palestrar na nossa CornTalks? Preencha o formulário!</em>
+    </p>
   </header>
 
   <!-- FORMULARIO -->
   <form action="" method="GET">
 
     <!-- NOME -->
-    <label for="full-name">Nome:</label>
-    <input name="full-name" type="text" id="full-name">
+    <div class="field">
+      <label class="label" for="full-name">Nome:</label>
+      <div class="control">
+        <input class="input" name="full-name" type="text" id="full-name">
+      </div>
+    </div>
+
 
     <!-- TIPO DE PALESTRA -->
     <fieldset>
