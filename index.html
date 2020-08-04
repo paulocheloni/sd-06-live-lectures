@@ -3,8 +3,81 @@
 <head>
   <meta charset="UTF-8">
   <title>Aula 6.3</title>
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+    }
+
+    .menu-container {
+      color: #fff;
+      background-color: #5995da;
+      padding: 20px 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    .menu {
+      width: 900px;
+      height: 40px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .links {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .login {
+      margin-left: 20px;
+    }
+
+    .header-container {
+      color: #5995da;
+      background-color: #d6e9fe;
+      display: flex;
+      justify-content: center;
+    }
+
+    .header {
+      width: 900px;
+      height: 300px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* .subscribe, .logo, .social {
+      border: 2px solid red;
+    } */
+
+  </style>
 </head>
 <body>
+
+  <!-- MENU -->
+  <div class="menu-container">
+    <div class="menu">
+      <div class="date">4 Aug, 2020</div>
+      <div class="links">
+        <div class="signup">Sign up</div>
+        <div class="login">Login</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <div class="header-container">
+    <div class="header">
+      <div class="subscribe">Subsribe Now!</div>
+      <div class="logo"><img src="images/awesome-logo.svg"></div>
+      <div class="social"><img src="images/social-icons.svg"></div>
+    </div>
+  </div>
 
 </body>
 </html>
