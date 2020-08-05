@@ -81,3 +81,55 @@ header li:last-child {
   padding: 20px 50px;
   text-transform: uppercase;
 }
+
+.know-the-hotel {
+  padding: 100px 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.know-the-hotel h3 {
+  font-size: 2rem;
+  margin-bottom: 35px;
+  text-align: center;
+  color: #191c03;
+}
+
+.know-the-hotel p {
+  max-width: 800px;
+  margin-bottom: 35px;
+  text-align: center;
+  color: #191c03;
+}
+
+.know-the-hotel hr {
+  width: 200px;
+  height: 2px;
+  margin-bottom: 70px;
+  border: none;
+  background-color: #191c03;
+}
+
+.know-the-hotel .grid {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.know-the-hotel .grid li {
+  height: 350px;
+  padding: 20px;
+  border-radius: 4px;
+  background-size: cover;
+  background-position: center;
+  background-clip: content-box;
+}
+
+.know-the-hotel .grid li.small {
+  flex-basis: 40%;
+}
+
+.know-the-hotel .grid li.large {
+  flex-basis: 60%;
+}
