@@ -112,4 +112,9 @@ body {
   .media-content {
     display: none;
   }
+
+  .main-content {
+    line-height: 1.5em;
+    font-family: sans-serif;
+  }
 }
