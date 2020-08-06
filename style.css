@@ -118,7 +118,7 @@ body {
     font-family: sans-serif;
   }
 
-  .main-content .movie-details .movie-cast, .main-content, .movie-details, .movie-awards {
+  .main-content .movie-details .movie-cast, .main-content, .movie-awards {
     float: none;
     width: 100%;
   }
