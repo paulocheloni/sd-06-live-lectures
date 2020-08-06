@@ -106,5 +106,6 @@ body {
 @media screen and (max-width: 360px) {
   .top-bar {
     background-color: #0fa36b;
+    position: static;
   }
 }
