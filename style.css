@@ -108,4 +108,8 @@ body {
     background-color: #0fa36b;
     position: static;
   }
+
+  .media-content {
+    display: none;
+  }
 }
