@@ -1,0 +1,104 @@
+body {
+  font-family: "Times New Roman", Times, serif;
+  margin: 0px;
+}
+
+.top-bar {
+  background-color: #506693;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+}
+
+.top-bar .title {
+  font-style: italic;
+  color: white;
+  text-align: center;
+}
+
+.main-content {
+  background-color: #A6BD66;
+  margin-top: 80px;
+}
+
+.main-content .movie-title {
+  width: 100%;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.main-content .media-content {
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.main-content .media-content img {
+  height: 360px;
+  width: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.main-content .movie-description {
+  margin: 0px 30px 0 30px;
+}
+
+.main-content .movie-description small {
+  display: block;
+  text-align: right;
+}
+
+.main-content .movie-details {
+  width: 100%;
+  background-color: #669B65;
+}
+
+.main-content .movie-details .movie-cast {
+  float: left;
+  width: 50%;
+  background-color: inherit;
+}
+
+.main-content .movie-details .movie-cast h3 {
+  text-align: center;
+}
+
+.main-content .movie-details .movie-cast table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.main-content .movie-details .movie-cast table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+.main-content .movie-details .movie-cast th, td {
+  padding: 15px;
+}
+
+.main-content .movie-details .movie-awards {
+  float: right;
+  width: 50%;
+  background-color: inherit;
+}
+
+.clear {
+  clear: both
+}
+
+.footer {
+  background-color: #B75952;
+  margin-top: 0px;
+  padding-bottom: 30px;
+}
+
+.footer .movie-external-content {
+  margin-top: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 30px;
+  padding-left: 30px;
+}
