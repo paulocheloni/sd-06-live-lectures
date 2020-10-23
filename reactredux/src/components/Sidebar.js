@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react=redux';
-import selectMovie from './actions/movieAction';
+import { connect } from 'react-redux';
+import selectMovie from '../actions/movieAction';
 
 class Sidebar extends React.Component {
   render() {
-    const { categories, selectMovie } = this.props;
+    const { categories, mySelectMovie } = this.props;
 
     return (
       <aside>
@@ -24,7 +24,7 @@ class Sidebar extends React.Component {
                       {movie.released}
                       <button
                         type="button"
-                        onClick={ () => selectMovie(category, movie) }
+                        onClick={ () => mySelectMovie(category, movie) }
                       >
                         Selecionar
                       </button>
@@ -42,6 +42,7 @@ class Sidebar extends React.Component {
 
 Sidebar.propTypes = {
   categories: PropTypes.shape.isRequired,
+  mySelectMovie: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
@@ -49,7 +50,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  selectMovie: (category, movie) => dispatch(selectMovie(category, movie)),
+  mySelectMovie: (category, movie) => dispatch(selectMovie(category, movie)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Sidebar);

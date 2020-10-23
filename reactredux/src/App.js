@@ -7,12 +7,10 @@ import store from './store';
 
 class App extends React.Component {
   render() {
-    const { myCategories } = this.state;
-
     return (
       <div>
         <Provider store={ store }>
-          <Sidebar categories={ myCategories } />
+          <Sidebar />
           <Player />
         </Provider>
       </div>
