@@ -5,16 +5,16 @@ import products from '../products';
 import addToCart from '../actions';
 
 class ProductList extends React.Component {
-  // validateQuantity(product, cart, addToCart) {
-  //   const productsInCart = cart.filter((item) => item.name === product.name);
-  //   if (productsInCart.length === product.stockQuantity) return false;
+  validateQuantity(product, cart, addToCartAction) {
+    const productsInCart = cart.filter((item) => item.name === product.name);
+    if (productsInCart.length === product.stockQuantity) return false;
 
-  //   addToCart(product);
-  //   return true;
-  // }
+    addToCartAction(product);
+    return true;
+  }
 
   render() {
-    const { addToCartAction } = this.props;
+    const { addToCartAction, cart } = this.props;
 
     return (
       <div>
@@ -39,7 +39,9 @@ class ProductList extends React.Component {
                 <td>
                   <button
                     type="button"
-                    onClick={ () => addToCartAction(product) }
+                    onClick={
+                      () => this.validateQuantity(product, cart, addToCartAction)
+                    }
                   >
                     Adicionar
                   </button>
@@ -57,8 +59,21 @@ const mapDispatchToProps = (dispatch) => ({
   addToCartAction: (product) => dispatch(addToCart(product)),
 });
 
+const mapStateToProps = (state) => ({
+  cart: state.reducer.cart,
+});
+
 ProductList.propTypes = {
   addToCartAction: PropTypes.func.isRequired,
+  cart: PropTypes.arrayOf(
+    PropTypes.shape(
+      {
+        name: PropTypes.string,
+        price: PropTypes.number,
+        stockQuantity: PropTypes.number,
+      },
+    ),
+  ).isRequired,
 };
 
-export default connect(null, mapDispatchToProps)(ProductList);
+export default connect(mapStateToProps, mapDispatchToProps)(ProductList);
