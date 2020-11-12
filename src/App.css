@@ -1,9 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+h1 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 70px;
+}
+
+body {
+  background: #303030;
+  color: white;
+}
+
 .App {
   text-align: center;
 }
 
 .map {
-  border: 1px solid black;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 0px 0px rgba(0,0,0,0.22);
   margin: 0 auto;
   max-width: 700px;
+}
+
+.yellow-font {
+  color: #ffec40
+}
+
+.lat-long-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lat-long {
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.lat-long-img {
+  margin-right: 5px;
 }

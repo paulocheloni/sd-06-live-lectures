@@ -2,8 +2,11 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Map from 'pigeon-maps';
-import Marker from 'pigeon-marker';
+import Overlay from 'pigeon-overlay';
 
+import latitudeImg from '../assets/latitude.svg';
+import longitudeImg from '../assets/longitude.svg';
+import loadingImg from '../assets/loading.svg';
 
 import { fetchISSLocation } from '../actions';
 
@@ -35,17 +38,51 @@ class ISSLocation extends Component {
         <div className="map">
           <Map
             center={[0, 0]}
-            defaultWidth={700}
+            defaultWidth={450}
             height={450}
-            minZoom={1}
+            minZoom={1.5}
             maxZoom={8}
-            zoom={1}
+            zoom={1.5}
           >
-            {!isFetching && isLocationPresent && <Marker anchor={[latitude, longitude]} />}
+            {!isFetching && isLocationPresent && (
+              <Overlay anchor={[latitude, longitude]}>
+                <img src="https://www.flaticon.com/svg/static/icons/svg/2619/2619499.svg" width={24} height={24} alt="corn marker" />
+              </Overlay>
+            )}
           </Map>
         </div>
-        {isFetching && 'Loading...'}
-        {!isFetching && isLocationPresent && `Current ISS location: latitude = ${latitude}, longitude = ${longitude}`}
+        {isFetching && (
+          <img
+            src={loadingImg}
+            width={24}
+            height={24}
+            alt="loading"
+          />
+        )}
+        {!isFetching && isLocationPresent && (
+          <section className="lat-long-section">
+            <div className="lat-long">
+              <img
+                className="lat-long-img"
+                src={latitudeImg}
+                width={24}
+                height={24}
+                alt="latitude"
+              />
+              <span>{latitude}</span>
+            </div>
+            <div className="lat-long">
+              <img
+                className="lat-long-img"
+                src={longitudeImg}
+                width={24}
+                height={24}
+                alt="longitude"
+              />
+              <span>{longitude}</span>
+            </div>
+          </section>
+        )}
         {!isFetching && error}
       </div>
     );

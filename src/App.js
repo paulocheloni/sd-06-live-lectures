@@ -5,7 +5,13 @@ import ISSLocation from './components/ISSLocation';
 function App() {
   return (
     <div className="App">
-      <h1>International Space Station Location Tracker</h1>
+      <h1>
+        Space Station
+        {' '}
+        <span className="yellow-font">Corn</span>
+        {' '}
+        Tracker
+      </h1>
       <ISSLocation />
     </div>
   );
