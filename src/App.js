@@ -20,7 +20,6 @@ class App extends React.Component {
   }
 
   async getQuestions() {
-    console.log(123)
     this.setState({ isLoading: true }, async () => {
       const questions = await getQuestions();
       this.setState({
