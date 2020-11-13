@@ -1,0 +1,27 @@
+.new-question {
+  display: flex;
+  justify-content: center;
+}
+
+.new-question form {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+
+.new-question form label {
+  display: flex;
+  flex-direction: column;
+  margin: 30px 0;
+}
+
+.question-section form {
+  display: flex;
+  flex-direction: column;
+}
+
+.question-section label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
