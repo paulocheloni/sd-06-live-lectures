@@ -42,17 +42,23 @@ class App extends React.Component {
     const { questions, isLoading } = this.state;
     return (
       <main className="App">
-        <h1>Corn Questions</h1>
-        <Switch>
-          <Route
-            path="/new-question"
-            render={(props) => <NewQuestionPage {...props} createQuestion={this.createQuestion} />}
-          />
-          <Route
-            path="/"
-            render={(props) => <QuestionListPage {...props} getQuestions={this.getQuestions} questions={questions} isLoading={isLoading} />}
-          />
-        </Switch>
+        <header className="main-header">
+          <section className="main-header-title">
+            <h3>🌽 Corn Questions</h3>
+          </section>
+        </header>
+        <section className="main-section">
+          <Switch>
+            <Route
+              path="/new-question"
+              render={(props) => <NewQuestionPage {...props} createQuestion={this.createQuestion} />}
+            />
+            <Route
+              path="/"
+              render={(props) => <QuestionListPage {...props} getQuestions={this.getQuestions} questions={questions} isLoading={isLoading} />}
+            />
+          </Switch>
+        </section>
       </main>
     );
   }
