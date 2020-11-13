@@ -1,46 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import QuestionListPage from "./pages/QuestionListPage";
 import NewQuestionPage from "./pages/NewQuestionPage";
-import { createQuestion, getQuestions } from './services/api';
+import * as api from './services/api';
+
+import QuestionsContext from './context/QuestionsContext';
 
 import './App.css';
 
-class App extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      questions: [],
-      isLoading: false,
-    }
+function App() {
+  const [questions, setQuestions] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
-    this.getQuestions = this.getQuestions.bind(this);
-    this.createQuestion = this.createQuestion.bind(this);
+  const getQuestions = async () => {
+    setIsLoading(true);
+    const apiReponseQuestions = await api.getQuestions();
+    setQuestions(apiReponseQuestions);
+    setIsLoading(false);
   }
 
-  async getQuestions() {
-    this.setState({ isLoading: true }, async () => {
-      const questions = await getQuestions();
-      this.setState({
-        questions,
-        isLoading: false,
-      });
-    })
+  const createQuestion = async (question) => {
+    setIsLoading(true);
+    await api.createQuestion(question);
+    setIsLoading(false);
   }
 
-  async createQuestion(question) {
-    this.setState({ isLoading: true }, async () => {
-      await createQuestion(question);
-      this.setState({
-        isLoading: false,
-      });
-    })
-  }
-
-  render() {
-    const { questions, isLoading } = this.state;
-    return (
+  return (
+    <QuestionsContext.Provider value={{ questions, isLoading, getQuestions, createQuestion }}>
       <main className="App">
         <header className="main-header">
           <section className="main-header-title">
@@ -51,17 +38,17 @@ class App extends React.Component {
           <Switch>
             <Route
               path="/new-question"
-              render={(props) => <NewQuestionPage {...props} createQuestion={this.createQuestion} />}
+              render={(props) => <NewQuestionPage {...props} />}
             />
             <Route
               path="/"
-              render={(props) => <QuestionListPage {...props} getQuestions={this.getQuestions} questions={questions} isLoading={isLoading} />}
+              render={(props) => <QuestionListPage {...props} />}
             />
           </Switch>
         </section>
       </main>
-    );
-  }
+    </QuestionsContext.Provider>
+  );
 }
 
 export default App;
