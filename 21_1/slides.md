@@ -38,13 +38,13 @@ SELECT IF(<condicao>, <valor_se_verdadeiro>, <valor_se_falso>);
 ### Exemplo do  CASE
 
 ```sql
-select 
+SELECT 
   concat(first_name, " ", last_name), 
   CASE store_id 
   WHEN 1 THEN 'loja 1'
   WHEN 2 THEN 'loja 2'
-  END as loja
-from sakila.customer;
+  END AS loja
+FROM sakila.customer;
 ```
 
 <!-- slide vertical=true -->
@@ -62,6 +62,7 @@ from sakila.customer;
 * RIGHT
 * LENGTH
 * SUBSTRING
+
 
 <!-- slide vertical=true -->
 

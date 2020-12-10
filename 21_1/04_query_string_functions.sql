@@ -13,6 +13,8 @@ SELECT REPLACE('Curso BeTrybe', 'e', 'eeee');
 -- retorna 5 caracteres a partir da esquerda
 SELECT LEFT('Curso BeTrybe', 5); 
 
+-- OBS.: O SQL não começa a contar strings da posicão 0 e sim da posicão 1.
+
 -- retorna 5 caracteres a partir da direita
 SELECT RIGHT('Curso BeTrybe', 5); -- 
 
@@ -24,3 +26,6 @@ SELECT SUBSTRING('Curso BeTrybe', 2, 4);
 
  -- retorna uma string de tamanho 6, começando a partir do quinto caractere à direita
 SELECT SUBSTRING('Curso BeTrybe', -5, 6);
+
+-- retorna vazio quando o segundo parâmetro é negativo
+SELECT SUBSTRING('Curso BeTrybe', -5, -1);
