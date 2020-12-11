@@ -1,0 +1,2 @@
+-- Exiba o titulo e a duração de empréstimo dos filmes que possuem a mesma duração. 
+-- Exiba apenas os filmes com a duração de empréstimo entre 2 a 4 dias.

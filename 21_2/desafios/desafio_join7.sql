@@ -1,0 +1,3 @@
+-- Monte uma query que exiba o id do ator, nome, id do filme e titulo do filme, 
+-- usando as tabelas actor, film_actor e film. 
+-- Dica: você precisará fazer mais de um JOIN na mesma query.
