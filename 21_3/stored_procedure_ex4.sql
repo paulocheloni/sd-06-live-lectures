@@ -1,5 +1,6 @@
 -- PROCEDURE COM PARÂMETROS DE ENTRADA E DE SAÍDA
 DROP PROCEDURE ChegamosNoCarnaval2;
+
 DELIMITER $$
 CREATE PROCEDURE ChegamosNoCarnaval2(
   IN ano INT,
@@ -17,7 +18,8 @@ BEGIN
       SET mensagem = 'Não estamos no mês do carnaval!';
     END IF;
     SELECT mensagem INTO estamosNoCarnaval;
-END $$ DELIMITER ;
+END $$ 
+DELIMITER ;
 
 SELECT 3 INTO @mes;
 CALL ChegamosNoCarnaval2(2020, @mes, @estamosNoCarnaval);

@@ -1,3 +1,5 @@
+DROP FUNCTION IF EXISTS CalcularTotalVendasCadastrados;
+
 -- STORED FUNCTION SEM PARAMETRO DE ENTRADA
 DELIMITER $$ 
 CREATE FUNCTION CalcularTotalVendasCadastrados() 
@@ -6,6 +8,8 @@ RETURNS INT READS SQL DATA BEGIN
   SELECT COUNT(*)
   FROM sakila.payment INTO total_de_vendas;
   RETURN total_de_vendas;
-END $$ DELIMITER;
+END $$ 
+DELIMITER ;
+
 -- Como usar:
 SELECT CalcularTotalVendasCadastrados();
