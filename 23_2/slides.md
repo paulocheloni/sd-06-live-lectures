@@ -22,6 +22,42 @@ presentation:
 
 <!-- slide -->
 
+## Antes de tudo
+
+<!-- slide vertical=true -->
+
+### Frontend x Backend x Banco de dados
+
+![](imgs/meme-db-front-back.jpeg))
+
+<!-- slide vertical=true -->
+
+### Mongo + Node
+
+```js
+const { ObjectId } = require('mongodb');
+const connection = require('./connection');
+
+const findByName = async (name) =>
+  connection()
+    .then((db) => db.collection('products').findOne({ name }));
+
+const findById = async (id) => {
+  if (!ObjectId.isValid(id)) return null;
+
+  return connection()
+    .then((db) => db.collection('products').findOne(ObjectId(id)));
+};
+
+const addProduct = async (name, quantity) => {
+  const result = await connection()
+    .then((db) => db.collection('products').insertOne({ name, quantity }));
+  return result.ops[0];
+};
+```
+
+<!-- slide -->
+
 ## Como exportar/importar um `dump` do mongo
 
 *Obs: Esses comandos devem ser executados fora do mongoshell*
@@ -160,6 +196,12 @@ db.filmes.find({$or: [
   { "avaliacao.bom": { $gte: 7 } }
 ]);
 ```
+
+<!-- slide vertical=true -->
+
+### Operador lógico `$nor`
+
+![](https://lh3.googleusercontent.com/proxy/hktGYyyO_f3ekYYOlL47V1SAUoy7bz_uJ0oyTa6qznqYP4TkJknJ0F_6YESIuouWjC4g5OjhH8bU-NRaPYfMa0JoN85WdIGkSs8WxajK2p2vPn7jtev6jjDwSB48yv8tdZA8Gh6hm8792v23nPwCkp8g_R05xWbS6Mz3OPAencMR)
 
 <!-- slide vertical=true -->
 
