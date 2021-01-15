@@ -185,7 +185,7 @@ db.filmes.find({ano: {
   $not: {$gte: 2000}}
 });
 
-db.filmes.find({nor: [
+db.filmes.find({$nor: [
   { ano: { $lt: 2020 } }, 
   { "avaliacao.bom": { $lt: 7 } }
 ]);
