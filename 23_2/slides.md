@@ -185,23 +185,20 @@ db.filmes.find({ano: {
   $not: {$gte: 2000}}
 });
 
-db.filmes.find({$nor: [
-  { ano: { $lt: 2020 } }, 
-  { "avaliacao.bom": { $lt: 7 } }
-]);
+db.filmes.find({diretor: 'Christopher Nolan'});
 
-// equivalente a 
-db.filmes.find({$or: [
-  { ano: { $gte: 2020 } }, 
-  { "avaliacao.bom": { $gte: 7 } }
-]);
+db.filmes.find({diretor: 'Christopher Nolan', $nor: [ {titulo: "Interestelar"}, { ano: 2014 } ]});
+
+db.filmes.find({diretor: 'Christopher Nolan', $nor: [ {titulo: "Batman: O Cavaleiro das Trevas"}, { ano: 2008 } ]});
 ```
 
 <!-- slide vertical=true -->
 
-### Operador lógico `$nor`
+### Operador lógico `$nor` x `$and`
 
 ![](https://lh3.googleusercontent.com/proxy/hktGYyyO_f3ekYYOlL47V1SAUoy7bz_uJ0oyTa6qznqYP4TkJknJ0F_6YESIuouWjC4g5OjhH8bU-NRaPYfMa0JoN85WdIGkSs8WxajK2p2vPn7jtev6jjDwSB48yv8tdZA8Gh6hm8792v23nPwCkp8g_R05xWbS6Mz3OPAencMR)
+
+![](https://1.bp.blogspot.com/-gfo3zRO2tQE/UOwWzh2x6aI/AAAAAAAAJGA/PIhW6hZQxfc/s320/AND.jpg)
 
 <!-- slide vertical=true -->
 

@@ -28,3 +28,6 @@ db.filmes.find({ $or: [{diretor: 'Christopher Nolan'}, {diretor: 'Peter Jackson'
 // * Filtre os filmes do `Steven Spielberg` que nem o nome seja `Indiana Jones e a Última Cruzada` nem o ano seja 1989. (Usando o operador $nor)
 
 db.filmes.find({diretor: 'Steven Spielberg', $nor: [ {titulo: "Indiana Jones e a Última Cruzada"}, { ano: 1989 } ]});
+
+// * Retorne os filmes sem diretor.
+db.filmes.find({diretor: {$exists: false}})
