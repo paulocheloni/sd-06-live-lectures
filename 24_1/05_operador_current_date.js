@@ -7,3 +7,5 @@ db.students.updateMany(
     } 
   }
 );
+
+db.students.find({});

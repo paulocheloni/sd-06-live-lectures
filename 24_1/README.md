@@ -29,7 +29,9 @@ use school;
 db.students.insertMany(
   [
     { name: "Estudante 1", school: "Escola do Futuro", bestScore: 9.8 },
-    { name: "Estudante 2", school: "Escola do Futuro", bestScore: 7.2 }
+    { name: "Estudante 2", school: "Escola do Futuro", bestScore: 7.2 },
+    { name: "Estudante 3", school: "Escola do Futuro", bestScore: 6.0 },
+    { name: "Estudante 4", school: "Escola do Futuro", bestScore: 10 }
   ]
 );
 
@@ -76,11 +78,9 @@ Faz todas as alterações ou não faz nenhuma.
 
 Quando o MongoDB atribui um valor ao _id, o tipo utilizado é o ObjectId, que basicamente é um hexadecimal composto por 12 bytes:
 
-4 bytes com um valor timestamp, representando a data de criação, medida em segundos desde a Unix epoch;
-
-5 bytes de um valor aleatório; e
-
-3 bytes com um contador incremental, iniciado com outro valor aleatório.
+* 4 bytes com um valor timestamp, representando a data de criação, medida em segundos desde a Unix epoch;
+* 5 bytes de um valor aleatório;
+* 3 bytes com um contador incremental, iniciado com outro valor aleatório.
 
 [Documentação do Mongo sobre _id](https://docs.mongodb.com/manual/reference/method/ObjectId/index.html)
 
@@ -92,7 +92,7 @@ Quando o MongoDB atribui um valor ao _id, o tipo utilizado é o ObjectId, que ba
 
 ```js
 db.students.updateOne(
-  { name: "Estudante 4" },
+  { name: "Estudante 5" },
   {
     $set: {
       school: "Trybe",
@@ -121,8 +121,8 @@ db.students.updateOne(
 ## Operadores `$min` e `$max`
 
 O MongoDB comparará o valor do campo no documento com o valor especificado na operação: 
-* `$max`: Se o valor passado na comparação for **maior** do que o valor atual do campo, a alteração será feita.
-* `$min`: Se o valor passado na comparação for **menor** do que o valor atual do campo, a alteração será feita.
+* `$max`: Se o valor passado na comparação for **maior** do que o valor atual do campo, a alteração será feita. (Arrasta para cima).
+* `$min`: Se o valor passado na comparação for **menor** do que o valor atual do campo, a alteração será feita. (Arrasta para baixo).
 
 <!-- slide -->
 
