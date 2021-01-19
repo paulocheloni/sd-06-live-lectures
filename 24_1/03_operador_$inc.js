@@ -8,7 +8,7 @@ db.products.find({ _id: 100}, { _id: true, quantity: true});
 
 // decremento
 db.products.updateOne(
-  { _id: 200 },
+  { _id: 100 },
   { $inc: { quantity: -200 } }
 );
 

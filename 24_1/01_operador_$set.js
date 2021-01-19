@@ -50,4 +50,4 @@ db.products.updateOne(
   }
 );
 
-db.produtos.find({ _id: 100});
+db.products.find({ _id: 100});
