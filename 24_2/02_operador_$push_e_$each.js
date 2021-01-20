@@ -33,3 +33,15 @@ db.artists.updateOne(
     }
   }
 );
+
+
+
+db.artists.updateOne(
+  { _id: 1 },
+  {
+    $push: {
+      members: { $each: ['Brian Epstein'], $position: 0 }
+    }
+  }
+);
+

@@ -14,38 +14,52 @@ O que vamos aprender hoje?
 <!-- slide vertical=true -->
 
 * Operadores `$push`, `$pull`, `$pop` e `$addToSet`;
-* Modificadores `$each`, `$slice` e `$sort`.
+* Modificadores `$each`, `$slice`, `$sort` e `$position`.
 * Array Filters
 
 <!-- slide -->
 
 ## Operador `$push`
 
-<!-- slide -->
+Adicionar um ou mais elementos em um atributo do tipo array.(Obs.: Pode inserir elementos duplicados)
 
-### Adicionando múltiplos valores de uma vez com `$push` usando `$each`
+<!-- slide vertical=true -->
 
-<!-- slide -->
+### Modificiadores do `$push`
 
-# Ordenando arrays com `$sort`
+* $each
+* $sort
+* $slice
+* $position
 
-<!-- slide -->
+<!-- slide vertical=true -->
 
-### Limitando tamanho da array com `$slice`
+### Prioridade dos modificadores
+
+* Altera o array para adicionar os elementos ( $each ) na posição correta ( $position );
+* Aplica a ordenação ( $sort ), se especificada;
+* Limita o array ( $slice ), se especificado;
+* Armazena o array .
 
 <!-- slide -->
 
 ## Operador `$pull`
 
+Remove os elementos que atendem a condição passada.
+
 <!-- slide -->
 
 ## Operador `$pop`
+
+Remove o último elemento da array.
 
 <!-- slide -->
 
 ## Operador `$addToSet`
 
+Garante que os dados não vão ser duplicados.
+
 <!-- slide -->
 
-## Operador $
+## Array Filters
 
