@@ -1,6 +1,5 @@
 # Updates Complexos Parte 2
 
-
 <!-- slide -->
 
 ## Operador `$all`
