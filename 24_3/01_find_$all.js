@@ -6,3 +6,4 @@ db.burgers.find(
 db.burgers.find(
   { ingredientes: { $all: ['frango', 'pão', 'alface']} }
 );
+

@@ -19,6 +19,10 @@ db.articles.createIndex({ subject: "text" })
 // Vamos listar todos os documentos que contenham coffee
 db.articles.find({ $text: { $search: "coffee" } });
 
+db.articles.getIndexes();
+
+db.articles.dropIndex('subject_text');
+
 // Vamos listar todos os documentos que contenham bake, coffee OU cake
 db.articles.find({ $text: { $search: "bake coffee cake" } })
 
