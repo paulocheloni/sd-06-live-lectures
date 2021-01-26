@@ -15,77 +15,13 @@ mongorestore --drop --db pokemongo --collection orders dumps/DBEnvyLoad_orders.b
 mongorestore --drop --db pokemongo --collection products dumps/DBEnvyLoad_products.bson
 ```
 
-### Revisando Lookup
+## [Operador `$group` com vários atributos](./01_groupd.md)
 
-[Exemplo](./lookup-exemplo1.js)
+## [Operador `$lookup` com pipeline](./02_lookup.md)
 
-## Adicionando novos campos
+## [Operador `$addFields`](./03_addFields.md)
 
-```js
-db.pokemons.find({}).map((doc) => {
-  db.pokemons.updateOne(
-    { _id: doc._id},
-    {
-      $set: {
-        pontosAtaque: Math.round(Math.random() * 100),
-        pontosDefesa: Math.round(Math.random() * 100),  
-        bonusAtaque: Math.ceil(Math.random() * 10),
-        bonusDefesa: Math.ceil(Math.random() * 10),
-        qtdAtaquesBatalha: Math.ceil(Math.random() * 6),
-        coeficienteAtaque: {
-          poison: Math.ceil(Math.random() * 5),
-          ground: Math.ceil(Math.random() * 5),
-          ice: Math.ceil(Math.random() * 5),
-          rock: Math.ceil(Math.random() * 5),
-          ghost: Math.ceil(Math.random() * 5),
-          fire: Math.ceil(Math.random() * 5),
-          electric: Math.ceil(Math.random() * 5),
-          fighting: Math.ceil(Math.random() * 5),
-          normal: Math.ceil(Math.random() * 5),
-          flying: Math.ceil(Math.random() * 5),
-          dragon: Math.ceil(Math.random() * 5),
-          psychic: Math.ceil(Math.random() * 5),
-          bug: Math.ceil(Math.random() * 5),
-          grass: Math.ceil(Math.random() * 5),
-          water: Math.ceil(Math.random() * 5)
-        },
-        coeficienteDefesa: {
-          poison: Math.ceil(Math.random() * 5),
-          ground: Math.ceil(Math.random() * 5),
-          ice: Math.ceil(Math.random() * 5),
-          rock: Math.ceil(Math.random() * 5),
-          ghost: Math.ceil(Math.random() * 5),
-          fire: Math.ceil(Math.random() * 5),
-          electric: Math.ceil(Math.random() * 5),
-          fighting: Math.ceil(Math.random() * 5),
-          normal: Math.ceil(Math.random() * 5),
-          flying: Math.ceil(Math.random() * 5),
-          dragon: Math.ceil(Math.random() * 5),
-          psychic: Math.ceil(Math.random() * 5),
-          bug: Math.ceil(Math.random() * 5),
-          grass: Math.ceil(Math.random() * 5),
-          water: Math.ceil(Math.random() * 5)
-        },
-      }
-    }
-  )
-});
-```
-
-# Operador `$addFields`;
-
-```js
-db.pokemons.aggregate([
-  {
-    $addFields: {
-      ataqueTotal: { $add: ['$pontosAtaque', '$bonusAtaque'] }
-    }
-  },
-  { $project: { name: true, pontosAtaque: true, bonusAtaque: true, ataqueTotal: true} }
-]);
-```
-
-# Operadores de cálculo 
+## Operadores de cálculo 
 
 * `$add`, `$subtract`, `$multiply`, `$divide` e `$abs`;
 
