@@ -4,10 +4,21 @@
 
 - [ ] Criar nosso primeiro script node.
 - [ ] Criar nosso primeiro pacote npm.
-- [ ] Como instalar dependências dentro do nosso pacote.
+- [ ] Criar scripts no package.json
+- [ ] Como instalar pacotes de terceiros dentro do nosso pacote. 
+- [ ] Como imporar e exportar módulos (Módulos x Pacotes)
 - [ ] Como exibir strings e variáveis com `console.log`
 - [ ] Como ler dados do console com a biblioteca [`readline-sync`](https://www.npmjs.com/package/readline-sync)
 
+### Módulos x Pacotes
+
+```
+A package is a file or directory that is described by a package.json file.
+A module is any file or directory in the node_modules directory that can be loaded by the Node.js require() function.
+Note: Since modules are not required to have a package.json file, not all modules are packages. Only modules that have a package.json file are also packages.
+```
+
+[Documentação do NPM](https://docs.npmjs.com/about-packages-and-modules)
 
 ### Caso de uso
 
