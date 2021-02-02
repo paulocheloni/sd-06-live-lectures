@@ -6,13 +6,16 @@ const readFile = util.promisify(fs.readFile);
 
 async function runAsync(folderPath) {
   try {
-    const fileNames = await readFile(folderPath).then((res) => res.byteLength);
-    console.log(fileNames);
-  } catch (err) {
-    console.log(err);
+    const fileNames = await readFile(folderPath);
+    // .catch(err => console.log(err));
+    console.log(fileNames.toString('utf-8'));
+  } catch (e) {
+    console.log(e.message);
   }
+  
 }
 
 console.log("hello");
 
-runAsync('./arquivos/arquivo1.txt');
+// runAsync('./arquivos/arquivo2.txt');
+runAsync('./arquivo.txt');

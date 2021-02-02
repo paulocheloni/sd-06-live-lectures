@@ -12,7 +12,7 @@ function dividirNumeros(num1, num2) {
 const dividendo = 10;
 const divisores = [1, 2, 3, 4, 5, 0];
 
-async function calcula() {
+// async function calcula() {
   const promises = divisores.map(async (divisor) => {
     return await dividirNumeros(dividendo, divisor)
       .catch((err) => { return err.message });
@@ -23,7 +23,7 @@ async function calcula() {
   resultados.map((resultado) => {
     console.log(resultado);
   })
-}
+// }
 
 calcula();
 
