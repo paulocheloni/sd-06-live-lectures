@@ -120,3 +120,9 @@ app.all('/path', middlewareFunction);
 // Executado quando algo é passado para `next`
 app.use(errorMiddlewareFunction);
 ```
+
+<!-- slide -->
+
+### Vamos para prática
+
+Vamos fazer um CRUD com uma autenticação simples para gerenciar a lista de Instrutores da Trybe.

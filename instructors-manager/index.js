@@ -1,3 +1,7 @@
+// 
+// Onde encaixar um middleware de erro
+// 
+
 const express = require('express');
 const cors = require("cors");
 const bodyParser = require('body-parser');
