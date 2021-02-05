@@ -34,18 +34,17 @@ User-Agent: HTTPie/2.1.0
 ​
 ## De onde podemos obter informação
 ​
-- Caminho
-​
-  - Params
-  - Query
-​
-- Headers
-​
-- Body
+* Caminho
+  * Params
+  * Query
+* Headers
+* Body (POST e PUT)
+
 ​
 <!-- slide vertical=true -->
 ​
-O node recebe esse payload de texto, processa essas informações, extrai e as passa para o Express. O Express entende essas informações e, com base nelas, decide qual middleware chamar
+* O Node recebe esse payload de texto, processa essas informações, extrai e as passa para o Express. 
+* O Express entende essas informações e, com base nelas, decide qual middleware chamar de acordo com a **Rota** e o verbo **HTTP**.
 ​
 <!-- slide -->
 ​
@@ -53,7 +52,8 @@ O node recebe esse payload de texto, processa essas informações, extrai e as p
 ​
 <!-- slide vertical=true -->
 ​
-O Express é, então, uma ferramenta para facilitar o processamento e a resposta de requisições HTTP. Ele é o responsável por saber que parte do nosso código (middleware) executar para cada tipo de requisição baseado em
+* O Express é, então, uma ferramenta para facilitar o processamento e a resposta de requisições HTTP. 
+* Ele é o responsável por saber que parte do nosso código (middleware) executar para cada tipo de requisição. 
 ​
 <!-- slide vertical=true -->
 ​
