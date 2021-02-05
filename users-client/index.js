@@ -3,7 +3,7 @@ const formUsuario = document.querySelector("#form-usuario");
 const api = {
   loadUsers: async () => {
     options = { headers: { 'Authorization': '123' } };
-    const response = await fetch("http://localhost:3000/instrutores", options);
+    const response = await fetch("http://localhost:3000/instrutores");
     const data = await response.json();
     
     return data;

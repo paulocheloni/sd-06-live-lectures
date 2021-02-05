@@ -104,7 +104,6 @@ const errorMiddlewareFunction = (err, req, res, next) => {
 app.use(middlewareFunction);
 // Executado em qualquer requisição para /path*
 app.use('/path', middlewareFunction);
-​
 // Executado em requisições do tipo GET para /path
 app.get('/path', middlewareFunction);
 // Executado em requisições do tipo POST para /path
@@ -113,12 +112,7 @@ app.post('/path', middlewareFunction);
 app.put('/path', middlewareFunction);
 // Executado em requisições do tipo DELETE para /path
 app.delete('/path', middlewareFunction);
-​
-// Executado em requisições de qualquer tipo para /path
-app.all('/path', middlewareFunction);
-​
-// Executado quando algo é passado para `next`
-app.use(errorMiddlewareFunction);
+
 ```
 
 <!-- slide -->
