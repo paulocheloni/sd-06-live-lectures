@@ -142,11 +142,14 @@ form.append('file', stream);
 const formHeaders = form.getHeaders();
 
 axios
-  .post('http://localhost:3000/files/upload', form, {
+  .post('http://localhost:3000/upload/single', form, {
     headers: {
       ...formHeaders,
     },
   })
-  .then((response) => response)
-  .catch((error) => error);
+  .then((response) => {
+    const { file } = response.data;
+    console.log("arquivo foi feito upload com o nome", file.filename)
+  })
+  .catch((error) => console.error(error));
 ```
