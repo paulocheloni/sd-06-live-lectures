@@ -7,16 +7,16 @@ const port = 3000
 //   dest: 'uploads'
 // });
 
-// const storage = multer.diskStorage({
-//   destination: (_req, _file, callback) => {
-//     callback(null, 'uploads')
-//   },
-//   filename: (req, file, callback) => {
-//     callback(null, `${Date.now()}-${file.originalname}`);
-//   }
-// });
+const storage = multer.diskStorage({
+  destination: (_req, _file, callback) => {
+    callback(null, 'uploads')
+  },
+  filename: (req, file, callback) => {
+    callback(null, `${Date.now()}-${file.originalname}`);
+  }
+});
 
-const storage = multer.memoryStorage();
+// const storage = multer.memoryStorage();
 
 const upload = multer({ storage });
 
