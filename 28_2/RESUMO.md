@@ -7,13 +7,13 @@ npm i multer
 ### Upload básico
 
 ```js
-const multer = require('multer');
-
 const upload = multer({dest: 'uploads'});
 
-app.post('/files/upload', upload.single('file'), (req, res) =>
-  res.send().status(200);
-);
+app.post('/files/upload', upload.single('file'), (req, res) => {
+  const { body, file } = req;
+
+  res.status(200).json({ body, file });
+});
 ```
 
 #### Movendo para um middleware
@@ -50,32 +50,7 @@ npm init -y
 npm i axios form-data
 ```
 
-#### Arquivo `send.js`
 
-```js
-const FormData = require('form-data');
-const axios = require('axios');
-const fs = require('fs');
-
-const stream = fs.createReadStream('./meu-arquivo.txt');
-
-/* Aqui adicionamos uma propriedade chamada 'file' onde carregará nosso arquivo */
-const form = new FormData();
-form.append('file', stream);
-
-/* Esse arquivo não será enviado  no body da requisição como de costume,
-   dessa vez iremos utilizar o header para  enviar essa informação. */
-const formHeaders = form.getHeaders();
-
-axios
-  .post('http://localhost:3000/files/upload', form, {
-    headers: {
-      ...formHeaders,
-    },
-  })
-  .then((response) => response)
-  .catch((error) => error);
-```
 
 
 
@@ -109,9 +84,8 @@ const storage = multer.diskStorage({
     callback(null, 'uploads')
   },
   filename: (req, file, callback) => {
-    callback(false)
-    // callback(null, file.originalname)
-    // callback(null, `${Date.now()}-${file.originalname}`)
+    callback(null, file.originalname)
+    callback(null, `${Date.now()}-${file.originalname}`)
   }
 })
 
@@ -128,6 +102,9 @@ module.exports = [
 ### Memory Storage
 
 ```js
+var storage = multer.memoryStorage()
+var upload = multer({ storage: storage })
+
 const uploadWithMultiSotorage = async (req, res) => {
   const { buffer, ...fileData } = req.file;
   const fileAsString = buffer.toString('utf-8');
@@ -147,3 +124,29 @@ const uploadWithMultiSotorage = async (req, res) => {
 
 
 
+#### Arquivo `send.js`
+
+```js
+const FormData = require('form-data');
+const axios = require('axios');
+const fs = require('fs');
+
+const stream = fs.createReadStream('./meu-arquivo.txt');
+
+/* Aqui adicionamos uma propriedade chamada 'file' onde carregará nosso arquivo */
+const form = new FormData();
+form.append('file', stream);
+
+/* Esse arquivo não será enviado  no body da requisição como de costume,
+   dessa vez iremos utilizar o header para  enviar essa informação. */
+const formHeaders = form.getHeaders();
+
+axios
+  .post('http://localhost:3000/files/upload', form, {
+    headers: {
+      ...formHeaders,
+    },
+  })
+  .then((response) => response)
+  .catch((error) => error);
+```
