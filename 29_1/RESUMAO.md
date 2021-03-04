@@ -1,6 +1,6 @@
 ## Logar no heroku
 
-`heroku login``
+`heroku login`
 
 ## Rodando local
 
