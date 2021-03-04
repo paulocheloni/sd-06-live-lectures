@@ -44,6 +44,6 @@ git push <remote_alias> <local_branch>:master (sempre a branch remota é a maste
 ## Configurar variável de ambiente
 
 ```
-heroku config:set <KEY>=<VALUE> (--app <app_name>)
+heroku config:set <KEY>=<VALUE> (--app <app_name>) (--remote=<alias>)
 ```
 
