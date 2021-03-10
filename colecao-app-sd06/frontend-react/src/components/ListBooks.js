@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 // import { Container } from './styles';
 import { Link } from 'react-router-dom';
-import { List } from "rbx";
+import { List, Button } from "rbx";
 import api from '../services/api';
 
 function ListBooks() {
@@ -21,6 +21,8 @@ function ListBooks() {
         <List.Item as={Link} key={book.id} to={`/book/${book.id}`}>{book.title}</List.Item>
       ))}
       </List>
+
+      <Button color='primary' to='/add' as={Link}>Cadastrar</Button>
     </>
   );
 }

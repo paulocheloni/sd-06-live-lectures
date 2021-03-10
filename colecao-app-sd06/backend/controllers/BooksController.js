@@ -24,9 +24,9 @@ BooksController.get('/:id', async (req, res) => {
 
   const book = await Book.findById(id);
 
-  if (!book) return res.status(404).json({message: 'Livro não encontrado'})
+  if (!book) return res.status(404).json({ok: false, message: 'Livro não encontrado'})
   
-  res.status(200).json(book)
+  res.status(200).json({ok: true, book})
 });
 
 BooksController.delete('/:id', async (req, res) => {
