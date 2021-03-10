@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Front x Back</h1>
+
+  <ul id="list-books">
+
+    <form action="" id='form-cadastro'>
+      <label for="title">Título</label>
+      <input type="text" name="title" id='book-title'>
+    
+      <input type="submit">
+    </form>
+  
+  </ul>
+
+  <script>
+    const getRequest = async () => {
+      // const response = await fetch('http://localhost:3000/');
+      // const text = await response.text();
+
+      const books = await fetch('http://localhost:3000/books')
+        .then(response => response.json());
+
+      books.forEach((book) => {
+        const li = document.createElement('li');
+        li.innerHTML = book.title;
+        document.querySelector('ul#list-books').appendChild(li);
+      })
+
+      document.querySelector('form#form-cadastro')
+      .addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const title = document.querySelector('#book-title').value;
+
+        await fetch('http://localhost:3000/books', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ title: title })
+        });
+      })
+      
+      // console.log(response);
+      console.log(books);
+    }
+
+    getRequest();
+
+  </script>
+</body>
+</html>
