@@ -3,7 +3,7 @@ const { Op } = require("sequelize");
 
 const router = Router();
 
-const { Product } = require('../models');
+const { Product, User } = require('../models');
 
 router.get('/', async (req, res) => {
   const products = await Product.findAll();
@@ -25,20 +25,36 @@ router.get('/search', async (req, res) => {
   res.status(200).json(product);
 });
 
+// eager loading
+// router.get('/:id', async (req, res) => {
+//   const { id } = req.params;
+
+//   console.log(id)
+//   const product = await Product.findByPk(id, {
+//     include: { model: User, as: 'user' }
+//   });
+
+//   res.status(200).json(product);
+// });
+
+// lazy loading
 router.get('/:id', async (req, res) => {
   const { id } = req.params;
 
-  const product = await Product.findByPk(id);
+  const product = await Product.findByPk(id)
 
-  res.status(200).json(product);
+  const user = await product.getUser();
+
+  res.status(200).json({ ...product.dataValues, user });
 });
 
+
 router.post('/', async (req, res) => {
-  const { name, description, price } = req.body;
+  const { name, description, price, userId } = req.body;
 
   console.log(Product);
 
-  const product = await Product.create({ name, description, price });
+  const product = await Product.create({ name, description, price, userId });
 
   res.status(201).json(product);
 });

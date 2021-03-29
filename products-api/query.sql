@@ -1,0 +1,2 @@
+SELECT `Product`.`id`, `Product`.`name`, `Product`.`description`, `Product`.`price`, `Product`.`userId`, `Product`.`createdAt`, `Product`.`updatedAt`, `user`.`id` AS `user.id`, `user`.`name` AS `user.name`, `user`.`username` AS `user.username`, `user`.`email` AS `user.email`, `user`.`password` AS `user.password`, `user`.`createdAt` AS `user.createdAt`, `user`.`updatedAt` AS `user.updatedAt` FROM `Products` AS `Product` 
+LEFT OUTER JOIN `Users` AS `user` ON `Product`.`userId` = `user`.`id` WHERE `Product`.`id` = '6';
