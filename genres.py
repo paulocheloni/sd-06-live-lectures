@@ -11,5 +11,5 @@ for jogo in jogos:
     for genero in generos_do_jogo:
         generos.add(genero)
 
-for numero, genero in enumerate(generos, start=1):
-    print(numero, genero)
+with open('genres.json', 'w') as output:
+    json.dump(list(generos), output)
