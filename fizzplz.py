@@ -5,11 +5,7 @@ import sys
 
 def pedir_numero():
     """Pede numero e retorna"""
-    try:
-        resposta = input("Digite um numero inteiro por favor: ")
-    except KeyboardInterrupt:
-        print("\ndeixa quieto.")
-        sys.exit()
+    resposta = input("Digite um numero inteiro por favor: ")
 
     try:
         return int(resposta)
