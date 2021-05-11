@@ -4,10 +4,12 @@
 def get_dependencies():
     """Le o arquivo requirements.txt e retorna a lista de deps."""
     with open("requirements.txt") as reqtxt:
-        deps = []
-        for line in reqtxt:
-            deps.append(line.split("==")[0])
-    return deps
+        return [line.split("==")[0] for line in reqtxt]
+
+
+def get_dependencies_urls(pacotes):
+    """Gera urls pros pacotes na lista."""
+    return [f"https://pypi.org/project/{pacote}/" for pacote in pacotes]
 
 
 assert get_dependencies() == [
