@@ -1,8 +1,8 @@
 import csv
-import dependencies as deps
-from responses import make_requests
-from extract import extract_data_from
-from output import save_to_csv
+import depscrape.dependencies as deps
+from depscrape.responses import make_requests
+from depscrape.extract import extract_data_from
+from depscrape.output import save_to_csv
 
 # de onde vem os dados (site, urls)
 ## requirements.txt lista as nossas dependencias
