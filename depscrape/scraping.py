@@ -1,5 +1,5 @@
 import csv
-import depscrape.dependencies as deps
+from depscrape.node_dependencies import Projeto
 from depscrape.responses import make_requests
 from depscrape.extract import extract_data_from
 from depscrape.output import save_to_csv
@@ -7,8 +7,9 @@ from depscrape.output import save_to_csv
 # de onde vem os dados (site, urls)
 ## requirements.txt lista as nossas dependencias
 ## gerar as urls de cada pacote a partir do nome
-pacotes = deps.get_dependencies()
-urls = deps.get_dependencies_urls(pacotes)
+projeto = Projeto('.')
+dependencias = projeto.busca_dependencias()
+urls = [dependencia.busca_url() for dependencia in dependencias]
 
 # como fazer as requisições
 ## lib requests
