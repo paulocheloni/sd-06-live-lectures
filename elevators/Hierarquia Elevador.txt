@@ -1,0 +1,8 @@
+ElevadorBase
+    - Elevador
+    - TerreoElevador
+    - MemoriaElevador
+
+OrdenadorBase
+    - Ordenador (coloca no fim da fila)
+    - SmartOrdenador (coloca no lugar ideal da fila)
